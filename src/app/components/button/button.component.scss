@@ -1,0 +1,13 @@
+.button {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+  letter-spacing: calc(0.5rem * 0.015);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  transition: filter 0.3s ease-in-out;
+  &:hover{
+    filter: brightness(0.9);
+  }
+}
