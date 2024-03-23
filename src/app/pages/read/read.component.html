@@ -1,0 +1,7 @@
+<section class="">
+  <div *ngIf="!file" class="read-input-text-box">
+    <input type="file" (change)="onFileSelected($event)" #textRead accept=".pdf">
+    <app-button type="orange" text="Anexar arquivo" (click)="textRead.click()"></app-button>
+    <p class="notice">O arquivo deve conter no máximo 3000 caracteres</p>
+  </div>
+</section>

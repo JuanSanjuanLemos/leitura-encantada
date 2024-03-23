@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 interface Palette {
   orange: string;
   lightOrange: string;
@@ -19,6 +20,7 @@ export class ButtonComponent implements OnInit {
 
   @Input() public text: string = '';
   @Input() type: 'green' | 'orange' | 'white' = 'white';
+  @Input() public urlNavigate: string = '';
 
   public color:string = '';
   public backGroundColor:string = '';
@@ -33,6 +35,10 @@ export class ButtonComponent implements OnInit {
     gray1: 'var(--gray-1)'
   };
 
+  constructor(private router: Router){
+
+  }
+
   ngOnInit(){
     this.mountPaletteColor();
   }
@@ -42,7 +48,7 @@ export class ButtonComponent implements OnInit {
       case 'orange':
         this.backGroundColor = this.palette.orange;
         this.color = this.palette.white;
-        this.boxShadowColor = '#FEF8F0';
+        this.boxShadowColor = '#e1bf91';
         break
       case 'white':
         this.backGroundColor = this.palette.white;
@@ -53,6 +59,12 @@ export class ButtonComponent implements OnInit {
         this.backGroundColor = this.palette.green;
         this.color = this.palette.white;
         this.boxShadowColor = '#93E7DF';
+    }
+  }
+
+  navigate() {
+    if(this.urlNavigate) {
+      this.router.navigate([this.urlNavigate]);
     }
   }
 

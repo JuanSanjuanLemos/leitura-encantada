@@ -5,6 +5,7 @@
   --light-green: #CBF3F0;
   --white: #FFFFFF;
   --gray-1: #333;
+  --gray-2: #505050;
 }
 
 //RESET CSS
@@ -28,7 +29,11 @@ button {
 // END RESET CSS
 
 body {
-  background-color:  var(--light-green);
+  background-color:  var(--white);
   overflow: hidden;
   padding: 2rem 2.4rem;
+}
+
+input[type="file"]{
+  display: none;
 }
