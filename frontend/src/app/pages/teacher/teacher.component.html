@@ -1,0 +1,39 @@
+<div class="dashboard-wrapper" *ngIf="authService.user$ | async as user; else unauthorized">
+  <header class="dashboard-header">
+    <div class="logo">Leitura Encantada</div>
+    <div class="user-profile">
+      <img [src]="user.photoURL" alt="Avatar" class="avatar" *ngIf="user.photoURL" />
+      <span class="user-name">{{ user.displayName }}</span>
+      <button class="logout-btn" (click)="authService.logout()">Sair</button>
+    </div>
+  </header>
+
+  <main class="dashboard-content">
+    <div class="welcome-box">
+      <h2>Olá, Educador(a) {{ user.displayName?.split(' ')?.[0] || '!' }} 👋</h2>
+      <p>Gerencie suas leituras e acompanhe as interações dos alunos.</p>
+    </div>
+
+    <div class="dashboard-grid">
+      <app-generic-card 
+        title="Nova Leitura" 
+        description="Gere um novo protocolo gamificado usando a IA do Gemini."
+        customClass="create-card">
+        <app-button variant="primary" (action)="goToCreate()">Criar Novo Conto</app-button>
+      </app-generic-card>
+
+      <app-generic-card 
+        title="Minhas Histórias" 
+        description="Acesse o histórico e os relatórios interativos dos seus textos."
+        customClass="list-card">
+        <app-button variant="secondary">Ver Histórias</app-button>
+      </app-generic-card>
+    </div>
+  </main>
+</div>
+
+<ng-template #unauthorized>
+  <div class="unauthorized-state">
+    <p>Carregando perfil...</p>
+  </div>
+</ng-template>

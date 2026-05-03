@@ -1,38 +1,55 @@
 :root {
-  --orange: #FF9F1C;
-  --light-orange: #FFBF69;
-  --green: #2EC4B6;
-  --light-green: #CBF3F0;
-  --white: #FFFFFF;
-  --gray-1: #333;
-  --gray-2: #505050;
+  /* Premium modern vibrant palette for kids reading app */
+  --primary-color: #6366f1; /* Indigo */
+  --primary-hover: #4f46e5;
+  --secondary-color: #f43f5e; /* Rose */
+  --secondary-hover: #e11d48;
+  --accent-color: #10b981; /* Emerald */
+  --accent-hover: #059669;
+
+  --bg-gradient-start: #e0e7ff;
+  --bg-gradient-end: #fce7f3;
+
+  --white: #ffffff;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-color: rgba(99, 102, 241, 0.25);
 }
 
 //RESET CSS
-
 a {
   text-decoration: none;
-
 }
 
 * {
   box-sizing: border-box;
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Outfit", "Inter", sans-serif;
 }
 
 button {
   border: none;
   cursor: pointer;
+  font-family: "Outfit", "Inter", sans-serif;
 }
 
 // END RESET CSS
 
 body {
-  background-color:  var(--white);
-  padding: 2rem 2.4rem;
+  background-color: var(--gray-100);
+  background-image: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--gray-800);
 }
 
-input[type="file"]{
+input[type="file"] {
   display: none;
 }
