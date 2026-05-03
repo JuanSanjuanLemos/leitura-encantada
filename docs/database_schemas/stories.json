@@ -4,23 +4,23 @@
   "description": "Textos e histórias infantis submetidas pelos professores.",
   "type": "object",
   "properties": {
-    "professorId": {
+    "teacherId": {
       "type": "string",
       "description": "ID do usuário (professor) que submeteu o conto."
     },
-    "titulo": {
+    "title": {
       "type": "string",
       "description": "Título correspondente ao texto ou história."
     },
-    "conteudoOriginal": {
+    "originalContent": {
       "type": "string",
       "description": "Texto contendo o enredo original enviado à IA para estruturação."
     },
-    "dataCriacao": {
+    "createdAt": {
       "type": "string",
       "format": "date-time",
       "description": "Registro de data e hora do envio do conto."
     }
   },
-  "required": ["professorId", "titulo", "conteudoOriginal"]
+  "required": ["teacherId", "title", "originalContent"]
 }

@@ -8,27 +8,27 @@
       "type": "string",
       "description": "Identidade do protocolo de leitura referenciado."
     },
-    "alunoNome": {
+    "studentName": {
       "type": "string",
       "description": "Nome da criança informada na tela inicial, para uso no relatório do professor."
     },
-    "dataSessao": {
+    "sessionDate": {
       "type": "string",
       "format": "date-time",
       "description": "Horário exato da entrega das interações da criança."
     },
-    "errosOrtograficos": {
+    "spellingErrors": {
       "type": "array",
       "description": "Registro das falhas nas palavras digitadas ao longo da experiência (vazio caso acerte tudo).",
       "items": {
          "type": "object",
          "properties": {
-            "passoOrdem": { "type": "number", "description": "Em qual passo/fase a dificuldade aconteceu." },
-            "palavraEsperada": { "type": "string", "description": "A ortografia/palavra correta." },
-            "textoDigitado": { "type": "string", "description": "Como a criança digitou erroneamente (ex: passaro, cazamento)." }
+            "stepOrder": { "type": "number", "description": "Em qual passo/fase a dificuldade aconteceu." },
+            "expectedWord": { "type": "string", "description": "A ortografia/palavra correta." },
+            "typedText": { "type": "string", "description": "Como a criança digitou erroneamente (ex: passaro, cazamento)." }
          }
       }
     }
   },
-  "required": ["protocolId", "alunoNome", "dataSessao", "errosOrtograficos"]
+  "required": ["protocolId", "studentName", "sessionDate", "spellingErrors"]
 }

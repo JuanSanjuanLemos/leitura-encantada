@@ -8,27 +8,27 @@
       "type": "string",
       "description": "Identificador do conto original associado na Firebase."
     },
-    "professorId": {
+    "teacherId": {
       "type": "string",
       "description": "Identificador do professor curador deste protocolo."
     },
-    "codigoCompartilhamento": {
+    "shareCode": {
       "type": "string",
       "description": "Código de 6 dígitos gerado para o aluno acessar a leitura do professor."
     },
-    "passos": {
+    "steps": {
       "type": "array",
       "description": "Vetor de interações separadas da leitura protocolada.",
       "items": {
         "type": "object",
         "properties": {
-          "ordem": { "type": "number", "description": "Posição na ordem em que o trecho e desafio aparecerão." },
-          "trecho": { "type": "string", "description": "Breve frase/parágrafo gamificado da história a ser lido." },
-          "perguntaInterativa": { "type": "string", "description": "Uma pergunta formulada pela IA baseada no trecho acima, que force o preenchimento de palavras chaves." },
-          "respostaEsperada": { "type": "string", "description": "Palavra requerida para ser validada ortograficamente pelo sistema." }
+          "order": { "type": "number", "description": "Posição na ordem em que o trecho e desafio aparecerão." },
+          "excerpt": { "type": "string", "description": "Breve frase/parágrafo gamificado da história a ser lido." },
+          "interactiveQuestion": { "type": "string", "description": "Uma pergunta formulada pela IA baseada no trecho acima, que force o preenchimento de palavras chaves." },
+          "expectedAnswer": { "type": "string", "description": "Palavra requerida para ser validada ortograficamente pelo sistema." }
         }
       }
     }
   },
-  "required": ["storyId", "professorId", "codigoCompartilhamento", "passos"]
+  "required": ["storyId", "teacherId", "shareCode", "steps"]
 }

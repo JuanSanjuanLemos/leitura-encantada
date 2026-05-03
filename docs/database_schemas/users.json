@@ -8,20 +8,20 @@
       "type": "string",
       "description": "ID exclusivo de autenticação do Firebase Auth."
     },
-    "nome": {
+    "name": {
       "type": "string",
       "description": "Nome completo do usuário."
     },
-    "papel": {
+    "role": {
       "type": "string",
-      "enum": ["professor", "aluno"],
+      "enum": ["teacher", "student"],
       "description": "Papel do usuário no sistema."
     },
-    "dataCriacao": {
+    "createdAt": {
       "type": "string",
       "format": "date-time",
       "description": "Data e hora em que o usuário foi registrado na plataforma."
     }
   },
-  "required": ["uid", "nome", "papel"]
+  "required": ["uid", "name", "role"]
 }
