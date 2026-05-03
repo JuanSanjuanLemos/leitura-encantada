@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Usuários",
+  "description": "Coleção para armazenar dados de perfil e autenticação de professores e alunos.",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "ID exclusivo de autenticação do Firebase Auth."
+    },
+    "nome": {
+      "type": "string",
+      "description": "Nome completo do usuário."
+    },
+    "papel": {
+      "type": "string",
+      "enum": ["professor", "aluno"],
+      "description": "Papel do usuário no sistema."
+    },
+    "dataCriacao": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Data e hora em que o usuário foi registrado na plataforma."
+    }
+  },
+  "required": ["uid", "nome", "papel"]
+}

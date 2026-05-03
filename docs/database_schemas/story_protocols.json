@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Protocolos de Leitura (Story Protocols)",
+  "description": "Rotinas iterativas e passos de leitura gerados pela API do Gemini a partir do conto.",
+  "type": "object",
+  "properties": {
+    "storyId": {
+      "type": "string",
+      "description": "Identificador do conto original associado na Firebase."
+    },
+    "professorId": {
+      "type": "string",
+      "description": "Identificador do professor curador deste protocolo."
+    },
+    "codigoCompartilhamento": {
+      "type": "string",
+      "description": "Código de 6 dígitos gerado para o aluno acessar a leitura do professor."
+    },
+    "passos": {
+      "type": "array",
+      "description": "Vetor de interações separadas da leitura protocolada.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ordem": { "type": "number", "description": "Posição na ordem em que o trecho e desafio aparecerão." },
+          "trecho": { "type": "string", "description": "Breve frase/parágrafo gamificado da história a ser lido." },
+          "perguntaInterativa": { "type": "string", "description": "Uma pergunta formulada pela IA baseada no trecho acima, que force o preenchimento de palavras chaves." },
+          "respostaEsperada": { "type": "string", "description": "Palavra requerida para ser validada ortograficamente pelo sistema." }
+        }
+      }
+    }
+  },
+  "required": ["storyId", "professorId", "codigoCompartilhamento", "passos"]
+}

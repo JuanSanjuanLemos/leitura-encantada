@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ButtonComponent } from '../../components/button/button.component';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-read',
@@ -13,6 +14,9 @@ export class ReadComponent {
 
   public file: File | null = null;
 
+  constructor( private apiService: ApiService ) {
+
+  }
 
   public onFileSelected(event: any) {
     const file: File = event.target.files[0];
@@ -21,5 +25,11 @@ export class ReadComponent {
 
   public uploadFile(file: File): void {
     console.log(file);
+    this.apiService.uploadPdf(file).subscribe(
+      (data:any) =>{
+        console.log(data);
+        return console.log(data);
+      }
+    )
   }
 }
